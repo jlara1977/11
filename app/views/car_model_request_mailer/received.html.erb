@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div style="font-family: Poppins, sans-serif; font-size: 1.25rem; line-height: 1.75rem; padding-left: 30px; max-width: 600px;">
+      <p style="">
+        Hola <span style="color: #20C6B6;"><%= @car_model_request.first_name %></span>,
+        muchas gracias por contactarnos.
+      </p>
+      <p>
+        Hemos recibido tu solicitud por un <b style="color: #20C6B6;"><%= @car_model_request.brand %></b>
+        <b style="color: #20C6B6;"><%= @car_model_request.model %></b> <br>
+        La cotización considera: <br>
+        <span style="color: #20C6B6;">Kilometraje anualmente:</span> <%= @car_model_request.annual_distance %> kilómetros <br>
+        <span style="color: #20C6B6;">Tiempo de contrato:</span> <%= @car_model_request.contract_time %> meses <br>
+      </p>
+      <p>
+        Dentro de los próximos días te contactará un ejecutivo, quien te enviará la
+        cotización del modelo solicitado. Si estás con dudas o necesitas asesoría
+        escríbenos a contacto@nexcar.cl para ofrecerte algo que se ajuste a tus
+        necesidades.
+      </p>
+      <p>
+        Se despide atentamente, <br>
+        Equipo Nexcar
+      </p>
+    </div>
+  </body>
+</html>

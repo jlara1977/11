@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nexcar</title>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag(image_url('favicon.png')) %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"> 
+    <%if Rails.env.production? %>
+      <%= render "shared/gtm_head" %>
+    <% end %>
+
+    <%= stylesheet_pack_tag 'application' %>
+  </head>
+
+  <body>
+    <%if Rails.env.production? %>
+      <%= render "shared/gtm_body" %>
+    <% end %>
+    <div id="vue-app" class="flex flex-col w-full font-main">
+      <app-header nexcar-logo-url="<%= image_url('nexcar-logo-white.svg') %>"></app-header>
+      <% flash.each do |type, message| %>
+        <div class="p-4 mx-auto mb-8 text-xl text-gray-700 bg-red-300 rounded-md">
+          <%= message %>
+        </div>
+      <% end %>
+      <div class="container mx-auto mb-4">
+        <%= yield %>
+      </div>
+      <app-footer></app-footer>
+    </div>
+  </body>
+</html>

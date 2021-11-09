@@ -1,0 +1,22 @@
+<div>
+  <div>
+  <h3><%= I18n.t('active_admin.price_version.hints_title') %></h3>
+  <div>
+    <ol>
+      <li>
+        <%= link_to(I18n.t('active_admin.price_version.file_import_hint_1'),
+                           download_xlsx_admin_price_versions_path, method: :post) %>
+      </li>
+      <li><%= I18n.t('active_admin.price_version.file_import_hint_2') %></li>
+      <li><%= I18n.t('active_admin.price_version.file_import_hint_3') %></li>
+      <li><%= I18n.t('active_admin.price_version.file_import_hint_4') %></li>
+      <li><%= I18n.t('active_admin.price_version.file_import_hint_5').html_safe %></li>
+    </ol>
+  </div>
+</div>
+<%= semantic_form_for(:price_versions, url: '/admin/price_versions/upload_file', method: 'post') do |form| %>
+  <%= form.inputs I18n.t('active_admin.price_version.update_message') do %>
+		<%= form.input :file, as: :file %>
+	<% end %>
+  <%= form.actions %>
+<% end %>

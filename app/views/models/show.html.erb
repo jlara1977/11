@@ -1,0 +1,5 @@
+<model
+  :model="<%= SerializeUtils.to_json(@model, with_images: true, with_characteristics: true) %> | camelizeKeys"
+  :car-versions="<%= SerializeUtils.map_to_json(@car_versions, serializer: Api::V1::CarSerializer, with_characteristics: true) %> | camelizeKeys"
+  :type-of-clients="<%= @type_of_clients.to_json %>"
+/>

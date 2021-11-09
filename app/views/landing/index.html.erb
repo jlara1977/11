@@ -1,0 +1,3 @@
+<landing
+  :brands="<%= SerializeUtils.map_to_json(@brands, serializer: Api::V1::BrandSerializer) %> | camelizeKeys"
+/>

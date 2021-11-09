@@ -1,0 +1,146 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "API V1",
+    "version": "v1"
+  },
+  "basePath": "/api/v1",
+  "definitions": {
+    "reservation_request_schema": {
+      "type": "object",
+      "properties": {
+        "car_id": {
+          "type": "integer"
+        },
+        "price_version_id": {
+          "type": "integer"
+        },
+        "email": {
+          "type": "string"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "contact_number": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "comment": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "car_id",
+        "price_version_id",
+        "email",
+        "first_name",
+        "last_name"
+      ]
+    },
+    "car_model_request_schema": {
+      "type": "object",
+      "properties": {
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "brand": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "annual_distance": {
+          "type": "string"
+        },
+        "contract_time": {
+          "type": "string"
+        },
+        "phone_number": {
+          "type": "string"
+        },
+        "comment": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "first_name",
+        "last_name",
+        "email",
+        "brand",
+        "model",
+        "annual_distance",
+        "contract_time",
+        "phone_number"
+      ]
+    }
+  },
+  "paths": {
+    "/car_model_requests": {
+      "post": {
+        "summary": "create car_model_request",
+        "tags": [
+          "Car Model Resquests"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "car_model_request",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/car_model_request_schema"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Car Model Request created"
+          },
+          "400": {
+            "description": "Incomplete Parameters"
+          }
+        }
+      }
+    },
+    "/reservation_requests": {
+      "post": {
+        "summary": "create reservation_request",
+        "tags": [
+          "Reservation Resquests"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "reservation_request",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/reservation_request_schema"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Reservation Request created"
+          },
+          "400": {
+            "description": "Incomplete Parameters"
+          }
+        }
+      }
+    }
+  }
+}

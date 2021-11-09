@@ -1,0 +1,4 @@
+<frequent-questions
+  :frequent-questions="<%= SerializeUtils.map_to_json(@frequent_questions, serializer: Api::V1::FrequentQuestionSerializer) %> | camelizeKeys"
+  :categories-options="<%= @categories_options.to_json %> | camelizeKeys"
+/>

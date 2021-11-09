@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div style="font-family: Poppins, sans-serif; font-size: 1.25rem; line-height: 1.75rem; padding-left: 30px; max-width: 600px;">
+      <p style="">
+        Hola <span style="color: #20C6B6;"><%= @reservation_request.first_name %></span>,
+        estamos muy contentos de que hayas reservado tu auto con nosotros.
+      </p>
+      <p>
+        <b>Plan Solicitado:</b> <br>
+        <span style="color: #20C6B6;">Auto</span>: <%= @car.brand.name %> - <%= @car.model.name %><br>
+        <span style="color: #20C6B6;">Versión</span>: <%= @car.version_name %> <br>
+        <span style="color: #20C6B6;">Kilometraje anual:</span> <%= @price_version.annual_distance %> kilómetros <br>
+        <span style="color: #20C6B6;">Tiempo de contrato:</span> <%= @price_version.contract_time %> meses <br>
+        <span style="color: #20C6B6;">Precio mensual:</span> $ <%= @price_version.monthly_price.format %><br>
+      </p>
+      <p>
+        Dentro de los próximos días te contactará un ejecutivo, quien te solicitará
+        algunos antecedentes comerciales. Una vez aprobados estos, te enviaremos el
+        contrato Nexcar para que lo firmes y pediremos que deposites una garantía
+        equivalente a un mes de arriendo.
+      </p>
+      <p>
+        ¡Lo mejor de todo es que <span style="color: #20C6B6;">haremos este proceso completamente
+        de manera digital</span> y te entregaremos el auto en la puerta de tu casa!
+      </p>
+      <p>
+        Se despide atentamente, <br>
+        Equipo Nexcar
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+<cars
+  :car-list="<%= SerializeUtils.map_to_json(@cars, serializer: Api::V1::CarSerializer) %> | camelizeKeys"
+  :brands="<%= SerializeUtils.map_to_json(@brands, serializer: Api::V1::BrandSerializer) %> | camelizeKeys"
+  :models="<%= SerializeUtils.map_to_json(@models, serializer: Api::V1::ModelSerializer) %> | camelizeKeys"
+  :shift-options="<%= @shift_options.to_json %> | camelizeKeys"
+  :fuel-options="<%= @fuel_options.to_json %> | camelizeKeys"
+  :traction-options="<%= @traction_options.to_json %> | camelizeKeys"
+  :annual-distance-options="<%= @annual_distance_options.to_json %> | camelizeKeys"
+  :contract-time-options="<%= @contract_time_options.to_json %> | camelizeKeys"
+  :car-type-options="<%= @car_type_options.to_json %> | camelizeKeys"
+  <% if @filter_brand.present? %>
+    :filter-brand="<%= SerializeUtils.to_json(@filter_brand) %> | camelizeKeys"
+  <% end %>
+/>
